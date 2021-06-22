@@ -1,8 +1,8 @@
-let images = {};
+let sprites = {};
 let assetsStillLoading = 0;
 
-function assetsLoadingLoop(callback) {
-    if (assetsStillLoading) {
+function assetsLoadingLoop(callback){
+    if (assetsStillLoading){
         requestAnimationFrame(assetsLoadingLoop.bind(this, callback));
     } else {
         callback();
@@ -10,19 +10,21 @@ function assetsLoadingLoop(callback) {
 }
 
 function loadAssets(callback){
-    function loadImage(fileName){
+
+    function loadSprite(fileName){
         assetsStillLoading++;
 
-        let photoImage = new Image();
-        photoImage.src = "./assets/images/" + fileName;
+        let spriteImage = new Image();
+        spriteImage.src = "./assets/sprites/" + fileName;
 
-        photoImage.onload = function() {
+        spriteImage.onload = function(){
             assetsStillLoading--;
         }
-        return photoImage;
+        return spriteImage;
     }
-    images.background = loadImage('pool_table.png');
-    images.stick = loadImage('cue_stick.png');
+    sprites.background = loadSprite('table.png');
+    sprites.stick = loadSprite('spr_stick.png');
 
     assetsLoadingLoop(callback);
+
 }
