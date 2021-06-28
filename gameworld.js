@@ -20,7 +20,7 @@ function GameWorld(){
         [new Vector2(413, 413), COLOR.WHITE]
     ].map(params => new Ball(params[0], params[1]))
 
-    this.whiteBall = this.balls[this.balls.length - 1];
+    this.whiteBall = this.balls.find(ball => ball.color === COLOR.WHITE);
     this.stick = new Stick(new Vector2(413, 413), this.whiteBall.shoot.bind(this.whiteBall));
 
     this.table = {
@@ -35,6 +35,7 @@ function GameWorld(){
 
 GameWorld.prototype.handleCollide = function(){
     for (let i = 0; i < this.balls.length; i++){
+        this.balls[i].handleBallInHole();
         this.balls[i].collideWithTable(this.table);
         for (let j = i + 1; j < this.balls.length; j++){
             const firstBall = this.balls[i];

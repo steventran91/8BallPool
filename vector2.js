@@ -32,3 +32,7 @@ Vector2.prototype.dot = function(vector){
   return this.x * vector.x + this.y * vector.y;
 }
 
+Vector2.prototype.distFrom = function(vector){
+  return this.minus(vector).length();
+}
+
