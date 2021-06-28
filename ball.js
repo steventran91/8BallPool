@@ -37,7 +37,7 @@ Ball.prototype.shoot = function(power, rotation){
 }
 
 Ball.prototype.collideWithBall = function(ball){
-    if (this.visible || !ball.visible){
+    if (!this.visible || !ball.visible){
         return; 
     }
     const n = this.position.minus(ball.position);
@@ -87,7 +87,7 @@ Ball.prototype.handleBallInHole = function(){
         return this.position.distFrom(pocket) < CONSTANTS.pocketRadius;
     });
 
-    if (inPocket){
+    if (!inPocket){
         return;
     }
 
@@ -114,7 +114,7 @@ Ball.prototype.collideWithTable = function(table){
     }
 
     if (this.position.y >= table.BottomY - BALL_RADIUS){
-        this.position.y = table.BottomY - BALL_RADIUS
+        this.position.y = table.BottomY - BALL_RADIUS;
         this.velocity = new Vector2(this.velocity.x, -this.velocity.y);
         collided = true;
     }
