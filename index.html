@@ -19,9 +19,28 @@
     <script src="./stick.js" type="text/javascript"></script>
     <script src="./gameworld.js" type="text/javascript"></script>
     <script src="./Game.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./style.css">
 
     <script>
         loadAssets(PoolGame.start);
     </script>
+    <div class="modal is-open">
+        <div class="modal-text">
+            <h1 class="modal-title">Welcome to 8 Ball Pool</h1>
+            <h2>Instuctions</h2>
+            <p>
+                <ul>
+                    <li>Use mouse to aim</li>
+                    <li>Click and hold right click down to decide strength of shooting</li>
+                    <li>Release mouse to shoot</li>
+                    <li>User must only shoot the same color ball into the pocket</li>
+                </ul>
+            </p>
+
+        </div>
+    
+        <div class="modal-screen"></div>
+        <script src="modal.js"></script>
+    </div>
 </body>
 </html>
