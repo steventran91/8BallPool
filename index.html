@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='favicon.ico' type='image/x-icon' />
     <title>Pool</title>
+    <script src="https://kit.fontawesome.com/37bbd63220.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <canvas id="screen" width="1500" height="825"></canvas>
-    <script src="./vector2.js" type="text/javascript"></script>
-    <script src="./input/buttonstate.js" type="text/javascript"></script>
-    <script src="./input/mouse.js" type="text/javascript"></script>
-    <script src="./Assets.js" type="text/javascript"></script>
-    <script src="./Canvas.js" type="text/javascript"></script>
-    <script src="./Color.js" type="text/javascript"></script>
-    <script src="./Constants.js" type="text/javascript"></script>
-    <script src="./ball.js" type="text/javascript"></script>
-    <script src="./stick.js" type="text/javascript"></script>
-    <script src="./gameworld.js" type="text/javascript"></script>
-    <script src="./Game.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="./style.css">
-
-    <script>
-        loadAssets(PoolGame.start);
-    </script>
-    <div class="modal is-open">
-        <div class="modal-text">
-            <h1 class="modal-title">Welcome to 8 Ball Pool</h1>
-            <h2>Instuctions</h2>
+    <div class="game-instructions">
+        <canvas id="screen" width="1500" height="825"></canvas>
+        <script src="./vector2.js" type="text/javascript"></script>
+        <script src="./input/buttonstate.js" type="text/javascript"></script>
+        <script src="./input/mouse.js" type="text/javascript"></script>
+        <script src="./Assets.js" type="text/javascript"></script>
+        <script src="./Canvas.js" type="text/javascript"></script>
+        <script src="./Color.js" type="text/javascript"></script>
+        <script src="./Constants.js" type="text/javascript"></script>
+        <script src="./ball.js" type="text/javascript"></script>
+        <script src="./stick.js" type="text/javascript"></script>
+        <script src="./gameworld.js" type="text/javascript"></script>
+        <script src="./Game.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="./style.css">
+        <div class="instructions-container">
+            <h1 class="title">Welcome to 8 Ball Pool</h1>
+            <h2 class="instructions">Instuctions</h2>
             <p>
                 <ul>
                     <li>Use mouse to aim</li>
@@ -36,11 +34,16 @@
                     <li>User must only shoot the same color ball into the pocket</li>
                 </ul>
             </p>
-
         </div>
+    </div>
     
-        <div class="modal-screen"></div>
-        <script src="modal.js"></script>
+
+    <script>
+        loadAssets(PoolGame.start);
+    </script>
+    <div class="icon-links">
+        <a href="https://github.com/steventran91"><i class="fab fa-github fa-3x" ></i></a>
+        <a href="https://www.linkedin.com/in/steven-tran-318973119/"><i class="fab fa-linkedin fa-3x"></i></a>
     </div>
 </body>
 </html>

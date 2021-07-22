@@ -1,0 +1,54 @@
+.game-instructions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.instructions-container {
+    margin-top: 107px;
+    border: 1px solid lightgray;
+    height: fit-content;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    margin-right: 160px;
+}
+
+.icon-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 770px;
+}
+
+.icon-links > a {
+    margin-left: 10px;
+    color: lightgreen;
+}
+
+.icon-links > a:hover{
+    transform: rotate(35deg);
+}
+
+.title {
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.instructions {
+    font-family: fantasy;
+    margin-left: 15px;
+    font-weight: 900;
+}
+
+.instructions > ul {
+    margin-top: -10px;
+}
+
+body {
+    background-image: url('../145415-billiards.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
