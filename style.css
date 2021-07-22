@@ -16,9 +16,9 @@
 
 .icon-links {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin-top: 770px;
+    justify-content: center;
+    /* align-items: flex-end;
+    margin-top: 770px; */
 }
 
 .icon-links > a {
