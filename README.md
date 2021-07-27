@@ -12,7 +12,9 @@ The 8Ball Pool Game is a classic 8 ball pool game. This is a two player game whe
 
 ## Wireframes
 * Will use table, balls, and cue stick photos as wireframes
-![Screen Shot 2021-06-21 at 3 30 09 PM](https://user-images.githubusercontent.com/78631034/122836298-d5e6aa00-d2a6-11eb-82f2-5afd9174fe14.png)
+![screenshot](https://user-images.githubusercontent.com/78631034/127100089-c9a24d72-023c-4e61-9ffa-037cfe862092.png)
+
+
 
 
 
@@ -21,9 +23,43 @@ The 8Ball Pool Game is a classic 8 ball pool game. This is a two player game whe
 * HTML/Canvas for rendering 
 * CSS for styling
 
-## Implementation Timeline
-Day 1 & 2: Setup and render pool table, balls, and cue sticks. 
+## Collisions
+* Used requestAnimationFrame to generate collisions between objects such as balls, cue stick, and table. 
+```Javascript
+Ball.prototype.collideWithTable = function(table){
+    if (!this.moving || !this.visible){
+        return;
+    }
+    let collided = false;
 
-Day 3 & 4: Setup and render main menu, where instructions are included
+    if (this.position.y <= table.TopY + BALL_RADIUS){
+        this.position.y = table.TopY + BALL_RADIUS;
+        this.velocity = new Vector2(this.velocity.x, -this.velocity.y);
+        collided = true;
+    }
 
-Day 5 & 6: Write game logic such as aiming and shooting and strength of shooting
+    if (this.position.x >= table.RightX - BALL_RADIUS){
+        this.position.x = table.RightX - BALL_RADIUS;
+        this.velocity = new Vector2(-this.velocity.x, this.velocity.y);
+        collided = true;
+    }
+
+    if (this.position.y >= table.BottomY - BALL_RADIUS){
+        this.position.y = table.BottomY - BALL_RADIUS;
+        this.velocity = new Vector2(this.velocity.x, -this.velocity.y);
+        collided = true;
+    }
+
+    if (this.position.x <= table.LeftX + BALL_RADIUS){
+        this.position.x = table.LeftX + BALL_RADIUS;
+        this.velocity = new Vector2(-this.velocity.x, this.velocity.y);
+        collided = true;
+    }
+
+    if (collided){
+        this.velocity = this.velocity.mult(0.98);
+    }
+
+
+}
+```
